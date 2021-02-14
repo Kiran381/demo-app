@@ -1,0 +1,22 @@
+server:
+  port: 8045
+  
+spring:
+  application:
+    name: demo-app
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/demo_glbyte
+    username: postgres
+    password: welcome123 
+  jpa:
+    hibernate:
+      ddl-auto: create
+      
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:9000/eureka
