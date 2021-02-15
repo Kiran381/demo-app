@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+<changeSet id="20210215_data_template_lines" author="kiranthota">
+  <createTable tableName="t_data_template_lines"
+    remarks="A table to contain all Template Lines">
+    <column name="id" type="Bigint">
+      <constraints nullable="false" unique="true" primaryKey="true"/>
+    </column>
+    <column name="column_name" type="varchar(255)">
+      <constraints nullable="false"/>
+    </column>
+    <column name="col_data_type" type="varchar(55)">
+      <constraints nullable="false"/>
+    </column>
+    <column name="date_format" type="varchar(55)">
+      <constraints nullable="true"/>
+    </column>
+    <column name="master_col_ref" type="varchar(55)">
+      <constraints nullable="false"/>
+    </column>
+    <column name="column_sequence" type="int">
+      <constraints nullable="false"/>
+    </column>
+  </createTable>
+</changeSet>
+
+</databaseChangeLog>

@@ -11,7 +11,9 @@ spring:
     password: welcome123 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:liquibase/master.xml
       
 eureka:
   instance:
