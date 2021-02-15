@@ -20,16 +20,17 @@ public class AppConfiguration {
 
 	@Bean
 	public Docket AppSwaggerConfig() {
-		log.debug("Swagger Configuration");
+		log.info("Swagger Configuration");
 		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(generateAPIInfo())
+				.groupName("demo-app")
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.app"))
 				.build();
 	}
 
 	private ApiInfo generateAPIInfo() {
-		return new ApiInfo("Demo Swagger","Implementing Swagger","1.0", "", getContacts(), "", "", new ArrayList());
+		return new ApiInfo("Demo App Swagger","Implementing Swagger","1.0", "", getContacts(), "", "", new ArrayList());
 	}
 
 	private Contact getContacts() {
